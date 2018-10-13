@@ -97,10 +97,13 @@ def _get_hostvars(server, docker_storage_mountpoints):
         # name at all, so using a hostname here would require an internal
         # DNS which would complicate the setup and potentially introduce
         # performance issues.
+<<<<<<< HEAD
         hostvars['openshift_hostname'] = server.metadata.get(
             'openshift_hostname', server.name)
+=======
         hostvars['openshift_kubelet_name_override'] = server.metadata.get(
             'openshift_kubelet_name_override', server.private_v4)
+>>>>>>> 29d0a1694a19ef49f61313a2f6f43c566e4782f8
     hostvars['openshift_public_hostname'] = server.name
 
     if server.metadata['host-type'] == 'cns':
